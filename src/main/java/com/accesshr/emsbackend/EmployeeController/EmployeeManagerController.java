@@ -244,7 +244,7 @@ public class EmployeeManagerController {
 //    }
 
 
-    @DeleteMapping(value = "/employees/{id}", produces = "application/json")
+    @DeleteMapping("/employees/{id}")
     public ResponseEntity<String> deleteEmployee(@PathVariable("id") int id) {
         try {
             boolean isDeleted = employeeManagerService.deleteById(id);
