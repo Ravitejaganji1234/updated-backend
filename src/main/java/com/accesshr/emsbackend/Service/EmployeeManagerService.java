@@ -19,7 +19,8 @@ public interface EmployeeManagerService {
     LoginResponse loginEmployee(LoginDTO loginDTO);
     List<EmployeeManagerDTO> getAllEmployees(); // New method to fetch all employees
     //    EmployeeManagerDTO getById(int id); // New method to fetch employee by ID
-    boolean deleteById(int employeeId); // New method to delete employee by ID
+    boolean deleteById(int id); // New method to delete employee by ID
     EmployeeManagerDTO getEmployeeDataById(String employeeId); // New method to fetch employee by ID
+    EmployeeManagerDTO updateEmployee(int id, EmployeeManagerDTO employeeManagerDTO);
 }
 

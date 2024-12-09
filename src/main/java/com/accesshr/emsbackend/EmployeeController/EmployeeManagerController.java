@@ -243,8 +243,17 @@ public class EmployeeManagerController {
 //        }
 //    }
 
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> updateEmployeeData(@PathVariable("id") int id, EmployeeManagerDTO employeeManagerDTO){
+        EmployeeManagerDTO updateEmp = employeeManagerService.updateEmployee(id, employeeManagerDTO);
+        try {
+            return ResponseEntity.ok(updateEmp);
+        }catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to update employee: " + e.getMessage());
+        }
+    }
 
-    @DeleteMapping("/employees/{id}")
+    @DeleteMapping("/employees/delete/{id}")
     public ResponseEntity<String> deleteEmployee(@PathVariable("id") int id) {
         try {
             boolean isDeleted = employeeManagerService.deleteById(id);

@@ -142,6 +142,34 @@ public class EmployeeManagerServiceImpl implements EmployeeManagerService {
     }
 
     @Override
+    public EmployeeManagerDTO updateEmployee(int id, EmployeeManagerDTO employeeManagerDTO) {
+        EmployeeManager update = employeeManagerRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee not found"));
+        if (update!=null){
+            update.setFirstName(employeeManagerDTO.getFirstName());
+            update.setLastName(employeeManagerDTO.getLastName());
+            update.setEmail(employeeManagerDTO.getEmail());
+            update.setCountry(employeeManagerDTO.getCountry());
+            update.setStreetAddress(employeeManagerDTO.getStreetAddress());
+            update.setCity(employeeManagerDTO.getCity());
+            update.setRegion(employeeManagerDTO.getRegion());
+            update.setPostalCode(employeeManagerDTO.getPostalCode());
+            update.setCompanyName(employeeManagerDTO.getCompanyName());
+            update.setCorporateEmail(employeeManagerDTO.getCorporateEmail());
+            update.setJobRole(employeeManagerDTO.getJobRole());
+            update.setEmploymentStatus(employeeManagerDTO.getEmploymentStatus());
+            update.setReportingTo(employeeManagerDTO.getReportingTo());
+            update.setRole(employeeManagerDTO.getRole());
+            update.setNationalCard(employeeManagerDTO.getNationalCard());
+            update.setTenthCertificate(employeeManagerDTO.getTenthCertificate());
+            update.setTwelfthCertificate(employeeManagerDTO.getTwelfthCertificate());
+            update.setGraduationCertificate(employeeManagerDTO.getGraduationCertificate());
+            update.setPassword(employeeManagerDTO.getPassword());
+            employeeManagerRepository.save(update);
+        }
+        return null;
+    }
+
+    @Override
     public boolean deleteById(int id) {
         if (employeeManagerRepository.existsById(id)) {
             employeeManagerRepository.deleteById(id);
