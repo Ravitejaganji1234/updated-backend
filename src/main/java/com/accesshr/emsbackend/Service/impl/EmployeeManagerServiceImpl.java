@@ -19,6 +19,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -139,6 +140,16 @@ public class EmployeeManagerServiceImpl implements EmployeeManagerService {
             return convertToDTO(employee);
         }
         return null;
+    }
+
+    @Override
+    public EmployeeManagerDTO getEmployeeById(int id) {
+        Optional<EmployeeManager> employeeId = employeeManagerRepository.findById(id);
+        if (employeeId.isEmpty()){
+            return null;
+        }else {
+            return convertToDTO(employeeId.get());
+        }
     }
 
     @Override

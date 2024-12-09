@@ -22,5 +22,6 @@ public interface EmployeeManagerService {
     boolean deleteById(int id); // New method to delete employee by ID
     EmployeeManagerDTO getEmployeeDataById(String employeeId); // New method to fetch employee by ID
     EmployeeManagerDTO updateEmployee(int id, EmployeeManagerDTO employeeManagerDTO);
+    EmployeeManagerDTO getEmployeeById(int id);
 }
 
