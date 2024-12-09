@@ -199,6 +199,7 @@ public class EmployeeManagerServiceImpl implements EmployeeManagerService {
     // Helper method to convert entity to DTO
     private EmployeeManagerDTO convertToDTO(EmployeeManager employee) {
         EmployeeManagerDTO dto = new EmployeeManagerDTO();
+        dto.setId(employee.getId());
         dto.setFirstName(employee.getFirstName());
         dto.setLastName(employee.getLastName());
         dto.setEmail(employee.getEmail());

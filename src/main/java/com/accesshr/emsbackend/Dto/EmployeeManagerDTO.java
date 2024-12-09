@@ -1,6 +1,7 @@
 package com.accesshr.emsbackend.Dto;
 
 public class EmployeeManagerDTO {
+    private int id;
     private String firstName;
     private String lastName;
     private String email;
@@ -27,6 +28,14 @@ public class EmployeeManagerDTO {
     // Getters and setters
     public String getFirstName() {
         return firstName;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setFirstName(String firstName) {
