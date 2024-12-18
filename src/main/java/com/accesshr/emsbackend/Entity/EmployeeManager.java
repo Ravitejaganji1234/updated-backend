@@ -14,7 +14,7 @@ public class EmployeeManager {
     private String firstName;
     private String lastName;
 
-
+    @Column(unique = true)
     private String email;
     private String country;
     private String streetAddress;
@@ -22,7 +22,11 @@ public class EmployeeManager {
     private String region;
     private String postalCode;
     private String companyName;
+
+    @Column(unique = true)
     private String employeeId;
+
+    @Column(unique = true)
     private String corporateEmail;
     private String jobRole;
     private String employmentStatus;
