@@ -232,4 +232,9 @@ public class EmployeeManagerServiceImpl implements EmployeeManagerService {
         dto.setGraduationCertificate(employee.getGraduationCertificate());
         return dto;
     }
+
+    @Override  /// updated now
+    public boolean isEmployeeIdPresent(String employeeId) {
+        return employeeManagerRepository.existsByEmployeeId(employeeId);
+    }
 }

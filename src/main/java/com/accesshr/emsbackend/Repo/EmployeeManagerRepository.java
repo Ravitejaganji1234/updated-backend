@@ -16,6 +16,10 @@ public interface EmployeeManagerRepository extends JpaRepository<EmployeeManager
 
     EmployeeManager findByEmployeeId(String email);
 
+    boolean existsByEmployeeId(String employeeId);
+
+
+
 //    @Query("SELECT e FROM EmployeeManager e WHERE e.employeeId = :employeeId")
 //    List<EmployeeManager> findByEmployeeId(@Param("employeeId") String employeeId);
 

@@ -23,5 +23,8 @@ public interface EmployeeManagerService {
     EmployeeManagerDTO getEmployeeDataById(String employeeId); // New method to fetch employee by ID
     EmployeeManagerDTO updateEmployee(int id, EmployeeManagerDTO employeeManagerDTO);
     EmployeeManagerDTO getEmployeeById(int id);
+
+    boolean isEmployeeIdPresent(String employeeId);///updated now
+
 }
 

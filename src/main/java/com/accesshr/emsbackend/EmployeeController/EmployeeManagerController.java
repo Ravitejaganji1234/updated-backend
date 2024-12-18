@@ -319,6 +319,19 @@ public class EmployeeManagerController {
         }
     }
 
+
+    @GetMapping(value="/exists/{employeeId}" , produces = "application/json")
+    public Boolean checkEmployeeExists(@PathVariable String employeeId) {
+        boolean exists = employeeManagerService.isEmployeeIdPresent(employeeId);
+
+        if (exists) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
 }
 
 
