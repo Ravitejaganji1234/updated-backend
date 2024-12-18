@@ -15,7 +15,6 @@ public class EmployeeManagerDTO {
     private String region;
     private String postalCode;
     private String companyName;
-    @Column(unique = true)
     private String employeeId;
     
     @Column(unique = true)
