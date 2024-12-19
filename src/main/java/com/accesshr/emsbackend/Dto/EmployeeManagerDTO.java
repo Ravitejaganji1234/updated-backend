@@ -1,5 +1,7 @@
 package com.accesshr.emsbackend.Dto;
 
+import jakarta.persistence.Column;
+
 public class EmployeeManagerDTO {
     private int id;
     private String firstName;
